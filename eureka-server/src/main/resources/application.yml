@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: eureka-server
+---
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    service-url:
+      defaultZone: http://peer2:1002/eureka/
+  server:
+    response-cache-auto-expiration-in-seconds: 10
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 10000
+server:
+  port: 1001
+spring:
+  profiles: peer1
+---
+eureka:
+  instance:
+    hostname: peer2
+  server:
+    response-cache-auto-expiration-in-seconds: 10
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 10000
+  client:
+    service-url:
+      defaultZone: http://peer1:1001/eureka/
+server:
+  port: 1002
+spring:
+  profiles: peer2

@@ -1,0 +1,12 @@
+package com.demo.cloud.entity;
+
+
+import lombok.Data;
+
+@Data
+public class User {
+
+    private Long id;
+
+    private String movie;
+}
