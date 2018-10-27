@@ -7,7 +7,7 @@ import lombok.Data;
 @Builder
 public class Movie {
 
-    private Long id;
+    private Float id;
 
     private String name;
 }

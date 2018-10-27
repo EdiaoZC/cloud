@@ -1,9 +1,12 @@
-spring:
-  application:
-    name: movie-service
-server:
-  port: 3001
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://peer1:1001/eureka/,http://peer2:1002/eureka/
+#spring:
+#  application:
+#    name: movie-service
+#server:
+#  port: 3001
+application:
+#  version: 2.0
+  price: 10.8
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://peer1:1001/eureka/,http://peer2:1002/eureka/
