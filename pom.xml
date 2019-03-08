@@ -15,6 +15,7 @@
         <module>zuul-proxy</module>
         <module>config-server</module>
         <module>api-gateway</module>
+        <module>hystrix-dashboard</module>
     </modules>
     <packaging>pom</packaging>
 

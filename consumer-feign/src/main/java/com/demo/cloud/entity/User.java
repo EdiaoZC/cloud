@@ -8,5 +8,5 @@ public class User {
 
     private Long id;
 
-    private String movie;
+    private String name;
 }

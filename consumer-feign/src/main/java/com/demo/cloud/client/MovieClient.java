@@ -5,7 +5,7 @@ import com.demo.cloud.entity.Movie;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@FeignClient(name = "movie-micro-service", fallback = MovieClientImpl.class)
+@FeignClient(value = "movie-service",  fallback = MovieClientImpl.class)
 public interface MovieClient {
 
     @GetMapping("/movie")
