@@ -15,7 +15,8 @@
         <module>zuul-proxy</module>
         <module>config-server</module>
         <module>api-gateway</module>
-        <module>hystrix-dashboard</module>
+        <module>dashboard</module>
+        <module>zipkin</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -37,7 +38,6 @@
     </properties>
 
 
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -55,8 +55,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-
 
 
 </project>

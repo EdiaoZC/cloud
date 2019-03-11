@@ -1,6 +1,11 @@
 spring:
   application:
     name: consumer-feign
+  sleuth:
+    http:
+      legacy:
+        enabled: true
+spring.sleuth.http
 eureka:
   client:
     service-url:
