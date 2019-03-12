@@ -16,7 +16,6 @@
         <module>config-server</module>
         <module>api-gateway</module>
         <module>dashboard</module>
-        <module>zipkin</module>
     </modules>
     <packaging>pom</packaging>
 

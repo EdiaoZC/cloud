@@ -5,7 +5,6 @@ spring:
     http:
       legacy:
         enabled: true
-spring.sleuth.http
 eureka:
   client:
     service-url:
