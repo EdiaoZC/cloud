@@ -13,3 +13,4 @@ ribbon:
 hystrix:
   metrics:
     polling-interval-ms: 500
+

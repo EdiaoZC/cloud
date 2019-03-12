@@ -15,7 +15,8 @@ public class UserController {
     private UserClient userClient;
 
     @GetMapping("/user")
-    public User user(){
+    public User user() {
+        log.info("feign处理请求");
         return userClient.user();
     }
 }
