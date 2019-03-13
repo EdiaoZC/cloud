@@ -18,12 +18,12 @@ public class UserServiceImpl implements UserService {
     @Override
     @HystrixCommand(fallbackMethod = "userHystrix")
     public User user() {
-        log.info("=======");
+        log.info("request user-service");
         return restTemplate.getForObject("http://user-micro-service/user", User.class);
     }
 
     private User userHystrix() {
-        log.info("=======");
+        log.info("userHystrix");
         return null;
     }
 }

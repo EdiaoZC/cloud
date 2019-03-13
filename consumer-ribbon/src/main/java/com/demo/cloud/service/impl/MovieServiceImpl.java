@@ -18,12 +18,12 @@ public class MovieServiceImpl implements MovieService {
     @Override
     @HystrixCommand(fallbackMethod = "movieHystrix")
     public Movie movie() {
-        log.info("============");
+        log.info("request movie-service");
         return restTemplate.getForObject("http://movie-micro-service/movie", Movie.class);
     }
 
     private Movie movieHystrix() {
-        log.info("============");
+        log.info("movieHystrix");
         return null;
     }
 }

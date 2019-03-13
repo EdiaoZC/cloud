@@ -15,7 +15,7 @@ public class MovieController {
     public Movie movie() {
         log.info("movie-service 处理请求");
         try {
-            Thread.sleep(new Random().nextInt(3000));
+            Thread.sleep(new Random().nextInt(300));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
