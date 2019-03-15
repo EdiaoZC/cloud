@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: movie-service
-server:
-  port: 3001
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:1001/eureka/

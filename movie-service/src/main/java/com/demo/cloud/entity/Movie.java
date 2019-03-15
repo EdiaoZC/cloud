@@ -10,4 +10,6 @@ public class Movie {
     private Long id;
 
     private String name;
+
+    private String version;
 }

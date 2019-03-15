@@ -14,9 +14,14 @@ server:
 ribbon:
   hystrix:
     enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+        - hystrix.stream
 hystrix:
-  command:
-
   metrics:
     polling-interval-ms: 500
 
