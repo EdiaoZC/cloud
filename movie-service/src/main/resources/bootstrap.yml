@@ -5,3 +5,5 @@ spring:
       label: dev
   application:
     name: movie
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

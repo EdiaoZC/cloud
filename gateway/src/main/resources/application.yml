@@ -1,0 +1,37 @@
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds:500
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: movie_route
+        uri: lb://movie-service
+        predicates:
+        - Path=/movie/**
+        filters:
+        - name: Hystrix
+          args:
+            name: movieHystrix
+            fallbackUri: forward:/fallback
+      - id: user_route
+        uri: lb://user-service
+        predicates:
+        - Path=/user/**
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1002/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+        - hystrix.stream
+server:
+  port: 80

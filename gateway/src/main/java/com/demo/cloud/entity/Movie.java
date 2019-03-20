@@ -1,19 +1,18 @@
 package com.demo.cloud.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+/**
+ * @Description TODO
+ * @Date 2019/3/19 11:24
+ * @Author zhang.chao
+ */
 @Data
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class Movie {
 
     private Long id;
 
     private String name;
-
-    private String version;
 }
