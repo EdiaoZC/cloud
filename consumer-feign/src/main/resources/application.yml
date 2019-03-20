@@ -22,6 +22,14 @@ feign:
   hystrix:
     enabled: true
 
+
 hystrix:
   metrics:
     polling-interval-ms: 3000
+  threadpool:
+    movie-service:
+      coreSize: 40
+      maximumSize: 40
+    user-service:
+      coreSize: 1
+      maximumSize: 5
