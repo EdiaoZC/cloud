@@ -11,7 +11,7 @@ public class MovieClientImpl implements MovieClient {
 
 
     @Override
-    public Movie movie() {
+    public Movie movie(Long id) {
         log.info("降级");
         return null;
     }

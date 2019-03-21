@@ -16,7 +16,7 @@ public class UserController {
     public User user() {
         log.info("user-service 处理请求");
         try {
-            Thread.sleep(new Random().nextInt(3000));
+            Thread.sleep(new Random().nextInt(800));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

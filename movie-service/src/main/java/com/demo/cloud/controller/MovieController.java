@@ -7,8 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -23,11 +26,22 @@ public class MovieController {
     @Value("${application.version}")
     private String version;
 
-    @GetMapping("/movie")
-    public Movie movie() throws InterruptedException {
+    @GetMapping("/movie/{id}")
+    public Movie movie(@PathVariable("id") Long id) throws InterruptedException {
         List<Movie> query = userDao.find(Movie.builder().build());
-        TimeUnit.MINUTES.sleep(new Random().nextInt(300));
+        TimeUnit.MILLISECONDS.sleep(800);
         log.info("movie-service 处理请求,data:{}", query);
-        return Movie.builder().id(100L).name("Titan").version(version).build();
+        return Movie.builder().id(id).name("Titan").version(version).build();
+    }
+
+
+    @GetMapping("/movie")
+    public List<Movie> movie(@RequestParam("ids") List<Long> ids) {
+        log.info("movie-service 处理请求,data:{}", ids);
+        List<Movie> movies = new ArrayList<>();
+        for (Long id : ids) {
+            movies.add(Movie.builder().id(id).name("Titan").version(version).build());
+        }
+        return movies;
     }
 }
