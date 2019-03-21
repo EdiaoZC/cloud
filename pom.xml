@@ -16,6 +16,7 @@
         <module>dashboard</module>
         <module>config</module>
         <module>gateway</module>
+        <module>auth-server</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -52,7 +53,6 @@
                 <version>1.16.18</version>
                 <scope>provided</scope>
             </dependency>
-
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
