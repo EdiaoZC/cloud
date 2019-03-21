@@ -1,1 +1,14 @@
-security:
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/EdiaoZC/cloud-config.git
+          username: 1132809782@qq.com
+          password: As110695
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://peer1:1001/eureka/
